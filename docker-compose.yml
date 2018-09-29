@@ -1,0 +1,12 @@
+version: "3"
+services:
+  keycloak:
+    build: ./docker
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - DB_VENDOR=h2
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./aius:/opt/jboss/keycloak/themes/aius"
